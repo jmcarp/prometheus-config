@@ -20,8 +20,8 @@ import (
 	common_config "github.com/prometheus/common/config"
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/config"
-	"github.com/prometheus/prometheus/model/labels"
+	"github.com/jmcarp/prometheus-config/config"
+	"github.com/jmcarp/prometheus-config/model/labels"
 )
 
 func TestStorageLifecycle(t *testing.T) {

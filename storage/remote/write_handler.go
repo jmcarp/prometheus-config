@@ -22,9 +22,9 @@ import (
 	"github.com/go-kit/log/level"
 	"github.com/pkg/errors"
 
-	"github.com/prometheus/prometheus/model/exemplar"
-	"github.com/prometheus/prometheus/prompb"
-	"github.com/prometheus/prometheus/storage"
+	"github.com/jmcarp/prometheus-config/model/exemplar"
+	"github.com/jmcarp/prometheus-config/prompb"
+	"github.com/jmcarp/prometheus-config/storage"
 )
 
 type writeHandler struct {
