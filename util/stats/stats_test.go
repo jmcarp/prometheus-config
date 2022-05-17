@@ -22,7 +22,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/util/testutil"
+	"github.com/jmcarp/prometheus-config/util/testutil"
 )
 
 func TestTimerGroupNewTimer(t *testing.T) {

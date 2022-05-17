@@ -36,7 +36,7 @@ import (
 	"github.com/prometheus/common/sigv4"
 	"github.com/prometheus/common/version"
 
-	"github.com/prometheus/prometheus/prompb"
+	"github.com/jmcarp/prometheus-config/prompb"
 )
 
 const maxErrMsgLen = 1024
@@ -103,7 +103,7 @@ type ClientConfig struct {
 }
 
 // ReadClient uses the SAMPLES method of remote read to read series samples from remote server.
-// TODO(bwplotka): Add streamed chunked remote read method as well (https://github.com/prometheus/prometheus/issues/5926).
+// TODO(bwplotka): Add streamed chunked remote read method as well (https://github.com/jmcarp/prometheus-config/issues/5926).
 type ReadClient interface {
 	Read(ctx context.Context, query *prompb.Query) (*prompb.QueryResult, error)
 }

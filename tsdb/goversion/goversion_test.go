@@ -16,7 +16,7 @@ package goversion_test
 import (
 	"testing"
 
-	_ "github.com/prometheus/prometheus/tsdb/goversion"
+	_ "github.com/jmcarp/prometheus-config/tsdb/goversion"
 )
 
 // This test is intentionally blank and exists only so `go test` believes
