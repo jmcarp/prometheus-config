@@ -40,17 +40,17 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/goleak"
 
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/tsdb/chunkenc"
-	"github.com/prometheus/prometheus/tsdb/chunks"
-	"github.com/prometheus/prometheus/tsdb/fileutil"
-	"github.com/prometheus/prometheus/tsdb/index"
-	"github.com/prometheus/prometheus/tsdb/record"
-	"github.com/prometheus/prometheus/tsdb/tombstones"
-	"github.com/prometheus/prometheus/tsdb/tsdbutil"
-	"github.com/prometheus/prometheus/tsdb/wal"
-	"github.com/prometheus/prometheus/util/testutil"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/tsdb/chunkenc"
+	"github.com/jmcarp/prometheus-config/tsdb/chunks"
+	"github.com/jmcarp/prometheus-config/tsdb/fileutil"
+	"github.com/jmcarp/prometheus-config/tsdb/index"
+	"github.com/jmcarp/prometheus-config/tsdb/record"
+	"github.com/jmcarp/prometheus-config/tsdb/tombstones"
+	"github.com/jmcarp/prometheus-config/tsdb/tsdbutil"
+	"github.com/jmcarp/prometheus-config/tsdb/wal"
+	"github.com/jmcarp/prometheus-config/util/testutil"
 )
 
 func TestMain(m *testing.M) {
@@ -59,7 +59,7 @@ func TestMain(m *testing.M) {
 	flag.Parse()
 	defaultIsolationDisabled = !isolationEnabled
 
-	goleak.VerifyTestMain(m, goleak.IgnoreTopFunction("github.com/prometheus/prometheus/tsdb.(*SegmentWAL).cut.func1"), goleak.IgnoreTopFunction("github.com/prometheus/prometheus/tsdb.(*SegmentWAL).cut.func2"))
+	goleak.VerifyTestMain(m, goleak.IgnoreTopFunction("github.com/jmcarp/prometheus-config/tsdb.(*SegmentWAL).cut.func1"), goleak.IgnoreTopFunction("github.com/prometheus/prometheus/tsdb.(*SegmentWAL).cut.func2"))
 }
 
 func openTestDB(t testing.TB, opts *Options, rngs []int64) (db *DB) {
@@ -198,7 +198,7 @@ func TestDataAvailableOnlyAfterCommit(t *testing.T) {
 }
 
 // TestNoPanicAfterWALCorruption ensures that querying the db after a WAL corruption doesn't cause a panic.
-// https://github.com/prometheus/prometheus/issues/7548
+// https://github.com/jmcarp/prometheus-config/issues/7548
 func TestNoPanicAfterWALCorruption(t *testing.T) {
 	db := openTestDB(t, &Options{WALSegmentSize: 32 * 1024}, nil)
 
@@ -600,7 +600,7 @@ func TestDB_Snapshot(t *testing.T) {
 
 // TestDB_Snapshot_ChunksOutsideOfCompactedRange ensures that a snapshot removes chunks samples
 // that are outside the set block time range.
-// See https://github.com/prometheus/prometheus/issues/5105
+// See https://github.com/jmcarp/prometheus-config/issues/5105
 func TestDB_Snapshot_ChunksOutsideOfCompactedRange(t *testing.T) {
 	db := openTestDB(t, nil, nil)
 
@@ -996,8 +996,8 @@ func TestWALSegmentSizeOptions(t *testing.T) {
 	}
 }
 
-// https://github.com/prometheus/prometheus/issues/9846
-// https://github.com/prometheus/prometheus/issues/9859
+// https://github.com/jmcarp/prometheus-config/issues/9846
+// https://github.com/jmcarp/prometheus-config/issues/9859
 func TestWALReplayRaceOnSamplesLoggedBeforeSeries(t *testing.T) {
 	const (
 		numRuns                        = 1
@@ -2780,7 +2780,7 @@ func TestRangeForTimestamp(t *testing.T) {
 }
 
 // TestChunkReader_ConcurrentReads checks that the chunk result can be read concurrently.
-// Regression test for https://github.com/prometheus/prometheus/pull/6514.
+// Regression test for https://github.com/jmcarp/prometheus-config/pull/6514.
 func TestChunkReader_ConcurrentReads(t *testing.T) {
 	chks := []chunks.Meta{
 		tsdbutil.ChunkFromSamples([]tsdbutil.Sample{sample{1, 1}}),
@@ -3432,7 +3432,7 @@ func newTestDB(t *testing.T) *DB {
 	return db
 }
 
-// Tests https://github.com/prometheus/prometheus/issues/10291#issuecomment-1044373110.
+// Tests https://github.com/jmcarp/prometheus-config/issues/10291#issuecomment-1044373110.
 func TestDBPanicOnMmappingHeadChunk(t *testing.T) {
 	dir := t.TempDir()
 

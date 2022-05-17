@@ -26,8 +26,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/storage"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/storage"
 )
 
 func TestMemPostings_addFor(t *testing.T) {
@@ -253,7 +253,7 @@ func TestMultiIntersect(t *testing.T) {
 			res: []storage.SeriesRef{2, 5, 6, 1001},
 		},
 		// One of the reproducible cases for:
-		// https://github.com/prometheus/prometheus/issues/2616
+		// https://github.com/jmcarp/prometheus-config/issues/2616
 		// The initialisation of intersectPostings was moving the iterator forward
 		// prematurely making us miss some postings.
 		{
@@ -779,7 +779,7 @@ func TestBigEndian(t *testing.T) {
 
 func TestIntersectWithMerge(t *testing.T) {
 	// One of the reproducible cases for:
-	// https://github.com/prometheus/prometheus/issues/2616
+	// https://github.com/jmcarp/prometheus-config/issues/2616
 	a := newListPostings(21, 22, 23, 24, 25, 30)
 
 	b := Merge(

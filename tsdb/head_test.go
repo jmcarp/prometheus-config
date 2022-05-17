@@ -36,17 +36,17 @@ import (
 	"go.uber.org/atomic"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/prometheus/prometheus/config"
-	"github.com/prometheus/prometheus/model/exemplar"
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/tsdb/chunkenc"
-	"github.com/prometheus/prometheus/tsdb/chunks"
-	"github.com/prometheus/prometheus/tsdb/index"
-	"github.com/prometheus/prometheus/tsdb/record"
-	"github.com/prometheus/prometheus/tsdb/tombstones"
-	"github.com/prometheus/prometheus/tsdb/tsdbutil"
-	"github.com/prometheus/prometheus/tsdb/wal"
+	"github.com/jmcarp/prometheus-config/config"
+	"github.com/jmcarp/prometheus-config/model/exemplar"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/tsdb/chunkenc"
+	"github.com/jmcarp/prometheus-config/tsdb/chunks"
+	"github.com/jmcarp/prometheus-config/tsdb/index"
+	"github.com/jmcarp/prometheus-config/tsdb/record"
+	"github.com/jmcarp/prometheus-config/tsdb/tombstones"
+	"github.com/jmcarp/prometheus-config/tsdb/tsdbutil"
+	"github.com/jmcarp/prometheus-config/tsdb/wal"
 )
 
 func newTestHead(t testing.TB, chunkRange int64, compressWAL bool) (*Head, *wal.WAL) {
@@ -2536,7 +2536,7 @@ func TestMemSafeIteratorSeekIntoBuffer(t *testing.T) {
 	require.False(t, ok)
 }
 
-// Tests https://github.com/prometheus/prometheus/issues/8221.
+// Tests https://github.com/jmcarp/prometheus-config/issues/8221.
 func TestChunkNotFoundHeadGCRace(t *testing.T) {
 	db := newTestDB(t)
 	db.DisableCompactions()
@@ -2601,7 +2601,7 @@ func TestChunkNotFoundHeadGCRace(t *testing.T) {
 	wg.Wait()
 }
 
-// Tests https://github.com/prometheus/prometheus/issues/9079.
+// Tests https://github.com/jmcarp/prometheus-config/issues/9079.
 func TestDataMissingOnQueryDuringCompaction(t *testing.T) {
 	db := newTestDB(t)
 	db.DisableCompactions()
@@ -2982,7 +2982,7 @@ func TestChunkSnapshot(t *testing.T) {
 		head.opts.EnableMemorySnapshotOnShutdown = true // Enabled to read from snapshot.
 
 		// Disabling exemplars to check that it does not hard fail replay
-		// https://github.com/prometheus/prometheus/issues/9437#issuecomment-933285870.
+		// https://github.com/jmcarp/prometheus-config/issues/9437#issuecomment-933285870.
 		head.opts.EnableExemplarStorage = false
 		head.opts.MaxExemplars.Store(0)
 		expExemplars = expExemplars[:0]
@@ -3040,7 +3040,7 @@ func TestSnapshotError(t *testing.T) {
 	// Create new Head which should replay this snapshot.
 	w, err := wal.NewSize(nil, nil, head.wal.Dir(), 32768, false)
 	require.NoError(t, err)
-	// Testing https://github.com/prometheus/prometheus/issues/9437 with the registry.
+	// Testing https://github.com/jmcarp/prometheus-config/issues/9437 with the registry.
 	head, err = NewHead(prometheus.NewRegistry(), nil, w, head.opts, nil)
 	require.NoError(t, err)
 	require.NoError(t, head.Init(math.MinInt64))
@@ -3053,7 +3053,7 @@ func TestSnapshotError(t *testing.T) {
 	require.Equal(t, 0, len(tm))
 }
 
-// Tests https://github.com/prometheus/prometheus/issues/9725.
+// Tests https://github.com/jmcarp/prometheus-config/issues/9725.
 func TestChunkSnapshotReplayBug(t *testing.T) {
 	dir := t.TempDir()
 	wlog, err := wal.NewSize(nil, nil, filepath.Join(dir, "wal"), 32768, true)
@@ -3157,7 +3157,7 @@ func TestChunkSnapshotTakenAfterIncompleteSnapshot(t *testing.T) {
 	require.Greater(t, offset, 0)
 }
 
-// Tests https://github.com/prometheus/prometheus/issues/10277.
+// Tests https://github.com/jmcarp/prometheus-config/issues/10277.
 func TestMmapPanicAfterMmapReplayCorruption(t *testing.T) {
 	dir := t.TempDir()
 	wlog, err := wal.NewSize(nil, nil, filepath.Join(dir, "wal"), 32768, false)
@@ -3212,7 +3212,7 @@ func TestMmapPanicAfterMmapReplayCorruption(t *testing.T) {
 	require.NoError(t, h.Close())
 }
 
-// Tests https://github.com/prometheus/prometheus/issues/10277.
+// Tests https://github.com/jmcarp/prometheus-config/issues/10277.
 func TestReplayAfterMmapReplayError(t *testing.T) {
 	dir := t.TempDir()
 	var h *Head

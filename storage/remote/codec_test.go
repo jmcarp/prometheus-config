@@ -20,10 +20,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/model/textparse"
-	"github.com/prometheus/prometheus/prompb"
-	"github.com/prometheus/prometheus/storage"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/model/textparse"
+	"github.com/jmcarp/prometheus-config/prompb"
+	"github.com/jmcarp/prometheus-config/storage"
 )
 
 var writeRequestFixture = &prompb.WriteRequest{

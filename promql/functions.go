@@ -24,8 +24,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/prometheus/common/model"
 
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/promql/parser"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/promql/parser"
 )
 
 // FunctionCall is the type of a PromQL function implementation
@@ -764,7 +764,7 @@ func funcDeriv(vals []parser.Value, args parser.Expressions, enh *EvalNodeHelper
 
 	// We pass in an arbitrary timestamp that is near the values in use
 	// to avoid floating point accuracy issues, see
-	// https://github.com/prometheus/prometheus/issues/2674
+	// https://github.com/jmcarp/prometheus-config/issues/2674
 	slope, _ := linearRegression(samples.Points, samples.Points[0].T)
 	return append(enh.Out, Sample{
 		Point: Point{V: slope},
@@ -811,7 +811,7 @@ func funcHistogramQuantile(vals []parser.Value, args parser.Expressions, enh *Ev
 		}
 		l := sigf(el.Metric)
 		// Add the metric name (which is always removed) to the signature to prevent combining multiple histograms
-		// with the same label set. See https://github.com/prometheus/prometheus/issues/9910
+		// with the same label set. See https://github.com/jmcarp/prometheus-config/issues/9910
 		l = l + el.Metric.Get(model.MetricNameLabel)
 
 		mb, ok := enh.signatureToMetricWithBuckets[l]

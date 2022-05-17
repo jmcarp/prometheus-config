@@ -14,6 +14,6 @@
 package plugins
 
 import (
-	_ "github.com/prometheus/prometheus/discovery/file" // Register file plugin.
-	_ "github.com/prometheus/prometheus/discovery/http" // Register http plugin.
+	_ "github.com/jmcarp/prometheus-config/discovery/file" // Register file plugin.
+	_ "github.com/jmcarp/prometheus-config/discovery/http" // Register http plugin.
 )

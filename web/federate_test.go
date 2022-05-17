@@ -27,11 +27,11 @@ import (
 	"github.com/prometheus/common/model"
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/config"
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/promql"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/tsdb"
+	"github.com/jmcarp/prometheus-config/config"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/promql"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/tsdb"
 )
 
 var scenarios = map[string]struct {
@@ -251,7 +251,7 @@ func (notReadyReadStorage) Stats(string) (*tsdb.Stats, error) {
 	return nil, errors.Wrap(tsdb.ErrNotReady, "wrap")
 }
 
-// Regression test for https://github.com/prometheus/prometheus/issues/7181.
+// Regression test for https://github.com/jmcarp/prometheus-config/issues/7181.
 func TestFederation_NotReady(t *testing.T) {
 	for name, scenario := range scenarios {
 		t.Run(name, func(t *testing.T) {

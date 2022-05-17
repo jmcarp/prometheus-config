@@ -17,59 +17,59 @@ package plugins
 
 import (
 	// Register aws plugin.
-	_ "github.com/prometheus/prometheus/discovery/aws"
+	_ "github.com/jmcarp/prometheus-config/discovery/aws"
 
 	// Register azure plugin.
-	_ "github.com/prometheus/prometheus/discovery/azure"
+	_ "github.com/jmcarp/prometheus-config/discovery/azure"
 
 	// Register consul plugin.
-	_ "github.com/prometheus/prometheus/discovery/consul"
+	_ "github.com/jmcarp/prometheus-config/discovery/consul"
 
 	// Register digitalocean plugin.
-	_ "github.com/prometheus/prometheus/discovery/digitalocean"
+	_ "github.com/jmcarp/prometheus-config/discovery/digitalocean"
 
 	// Register dns plugin.
-	_ "github.com/prometheus/prometheus/discovery/dns"
+	_ "github.com/jmcarp/prometheus-config/discovery/dns"
 
 	// Register eureka plugin.
-	_ "github.com/prometheus/prometheus/discovery/eureka"
+	_ "github.com/jmcarp/prometheus-config/discovery/eureka"
 
 	// Register gce plugin.
-	_ "github.com/prometheus/prometheus/discovery/gce"
+	_ "github.com/jmcarp/prometheus-config/discovery/gce"
 
 	// Register hetzner plugin.
-	_ "github.com/prometheus/prometheus/discovery/hetzner"
+	_ "github.com/jmcarp/prometheus-config/discovery/hetzner"
 
 	// Register kubernetes plugin.
-	_ "github.com/prometheus/prometheus/discovery/kubernetes"
+	_ "github.com/jmcarp/prometheus-config/discovery/kubernetes"
 
 	// Register linode plugin.
-	_ "github.com/prometheus/prometheus/discovery/linode"
+	_ "github.com/jmcarp/prometheus-config/discovery/linode"
 
 	// Register marathon plugin.
-	_ "github.com/prometheus/prometheus/discovery/marathon"
+	_ "github.com/jmcarp/prometheus-config/discovery/marathon"
 
 	// Register moby plugin.
-	_ "github.com/prometheus/prometheus/discovery/moby"
+	_ "github.com/jmcarp/prometheus-config/discovery/moby"
 
 	// Register openstack plugin.
-	_ "github.com/prometheus/prometheus/discovery/openstack"
+	_ "github.com/jmcarp/prometheus-config/discovery/openstack"
 
 	// Register puppetdb plugin.
-	_ "github.com/prometheus/prometheus/discovery/puppetdb"
+	_ "github.com/jmcarp/prometheus-config/discovery/puppetdb"
 
 	// Register scaleway plugin.
-	_ "github.com/prometheus/prometheus/discovery/scaleway"
+	_ "github.com/jmcarp/prometheus-config/discovery/scaleway"
 
 	// Register triton plugin.
-	_ "github.com/prometheus/prometheus/discovery/triton"
+	_ "github.com/jmcarp/prometheus-config/discovery/triton"
 
 	// Register uyuni plugin.
-	_ "github.com/prometheus/prometheus/discovery/uyuni"
+	_ "github.com/jmcarp/prometheus-config/discovery/uyuni"
 
 	// Register xds plugin.
-	_ "github.com/prometheus/prometheus/discovery/xds"
+	_ "github.com/jmcarp/prometheus-config/discovery/xds"
 
 	// Register zookeeper plugin.
-	_ "github.com/prometheus/prometheus/discovery/zookeeper"
+	_ "github.com/jmcarp/prometheus-config/discovery/zookeeper"
 )

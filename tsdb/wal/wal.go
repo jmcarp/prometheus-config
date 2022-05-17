@@ -33,7 +33,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/prometheus/prometheus/tsdb/fileutil"
+	"github.com/jmcarp/prometheus-config/tsdb/fileutil"
 )
 
 const (

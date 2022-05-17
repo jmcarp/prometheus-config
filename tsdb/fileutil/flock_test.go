@@ -18,7 +18,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/prometheus/prometheus/util/testutil"
+	"github.com/jmcarp/prometheus-config/util/testutil"
 )
 
 func TestLocking(t *testing.T) {
