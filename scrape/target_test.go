@@ -29,9 +29,9 @@ import (
 	"github.com/prometheus/common/model"
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/config"
-	"github.com/prometheus/prometheus/discovery/targetgroup"
-	"github.com/prometheus/prometheus/model/labels"
+	"github.com/jmcarp/prometheus-config/config"
+	"github.com/jmcarp/prometheus-config/discovery/targetgroup"
+	"github.com/jmcarp/prometheus-config/model/labels"
 )
 
 const (

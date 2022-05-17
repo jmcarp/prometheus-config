@@ -19,7 +19,7 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/prometheus/prometheus/tsdb/chunkenc"
+	"github.com/jmcarp/prometheus-config/tsdb/chunkenc"
 )
 
 type chunkWriteJob struct {

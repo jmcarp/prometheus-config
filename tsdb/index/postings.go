@@ -22,8 +22,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/storage"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/storage"
 )
 
 var allPostingsKey = labels.Label{}

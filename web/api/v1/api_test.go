@@ -30,7 +30,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/prometheus/prometheus/util/stats"
+	"github.com/jmcarp/prometheus-config/util/stats"
 
 	"github.com/go-kit/log"
 	"github.com/pkg/errors"
@@ -41,20 +41,20 @@ import (
 	"github.com/prometheus/common/route"
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/config"
-	"github.com/prometheus/prometheus/model/exemplar"
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/model/textparse"
-	"github.com/prometheus/prometheus/model/timestamp"
-	"github.com/prometheus/prometheus/prompb"
-	"github.com/prometheus/prometheus/promql"
-	"github.com/prometheus/prometheus/promql/parser"
-	"github.com/prometheus/prometheus/rules"
-	"github.com/prometheus/prometheus/scrape"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/storage/remote"
-	"github.com/prometheus/prometheus/tsdb"
-	"github.com/prometheus/prometheus/util/teststorage"
+	"github.com/jmcarp/prometheus-config/config"
+	"github.com/jmcarp/prometheus-config/model/exemplar"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/model/textparse"
+	"github.com/jmcarp/prometheus-config/model/timestamp"
+	"github.com/jmcarp/prometheus-config/prompb"
+	"github.com/jmcarp/prometheus-config/promql"
+	"github.com/jmcarp/prometheus-config/promql/parser"
+	"github.com/jmcarp/prometheus-config/rules"
+	"github.com/jmcarp/prometheus-config/scrape"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/storage/remote"
+	"github.com/jmcarp/prometheus-config/tsdb"
+	"github.com/jmcarp/prometheus-config/util/teststorage"
 )
 
 // testMetaStore satisfies the scrape.MetricMetadataStore interface.

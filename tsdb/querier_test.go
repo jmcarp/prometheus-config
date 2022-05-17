@@ -27,13 +27,13 @@ import (
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/tsdb/chunkenc"
-	"github.com/prometheus/prometheus/tsdb/chunks"
-	"github.com/prometheus/prometheus/tsdb/index"
-	"github.com/prometheus/prometheus/tsdb/tombstones"
-	"github.com/prometheus/prometheus/tsdb/tsdbutil"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/tsdb/chunkenc"
+	"github.com/jmcarp/prometheus-config/tsdb/chunks"
+	"github.com/jmcarp/prometheus-config/tsdb/index"
+	"github.com/jmcarp/prometheus-config/tsdb/tombstones"
+	"github.com/jmcarp/prometheus-config/tsdb/tsdbutil"
 )
 
 // TODO(bwplotka): Replace those mocks with remote.concreteSeriesSet.
@@ -1447,7 +1447,7 @@ func BenchmarkQuerySeek(b *testing.B) {
 	}
 }
 
-// Refer to https://github.com/prometheus/prometheus/issues/2651.
+// Refer to https://github.com/jmcarp/prometheus-config/issues/2651.
 func BenchmarkSetMatcher(b *testing.B) {
 	cases := []struct {
 		numBlocks                   int
@@ -1575,7 +1575,7 @@ func BenchmarkSetMatcher(b *testing.B) {
 	}
 }
 
-// Refer to https://github.com/prometheus/prometheus/issues/2651.
+// Refer to https://github.com/jmcarp/prometheus-config/issues/2651.
 func TestFindSetMatches(t *testing.T) {
 	cases := []struct {
 		pattern string
@@ -1826,7 +1826,7 @@ func TestPostingsForMatchers(t *testing.T) {
 			},
 		},
 		// Set optimization for Regex.
-		// Refer to https://github.com/prometheus/prometheus/issues/2651.
+		// Refer to https://github.com/jmcarp/prometheus-config/issues/2651.
 		{
 			matchers: []*labels.Matcher{labels.MustNewMatcher(labels.MatchRegexp, "n", "1|2")},
 			exp: []labels.Labels{

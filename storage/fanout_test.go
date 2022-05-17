@@ -21,9 +21,9 @@ import (
 	"github.com/prometheus/common/model"
 	"github.com/stretchr/testify/require"
 
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/util/teststorage"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/util/teststorage"
 )
 
 func TestFanout_SelectSorted(t *testing.T) {

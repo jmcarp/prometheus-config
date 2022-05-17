@@ -29,13 +29,13 @@ import (
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/tsdb/chunkenc"
-	"github.com/prometheus/prometheus/tsdb/chunks"
-	tsdb_errors "github.com/prometheus/prometheus/tsdb/errors"
-	"github.com/prometheus/prometheus/tsdb/fileutil"
-	"github.com/prometheus/prometheus/tsdb/index"
-	"github.com/prometheus/prometheus/tsdb/tombstones"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/tsdb/chunkenc"
+	"github.com/jmcarp/prometheus-config/tsdb/chunks"
+	tsdb_errors "github.com/jmcarp/prometheus-config/tsdb/errors"
+	"github.com/jmcarp/prometheus-config/tsdb/fileutil"
+	"github.com/jmcarp/prometheus-config/tsdb/index"
+	"github.com/jmcarp/prometheus-config/tsdb/tombstones"
 )
 
 // ExponentialBlockRanges returns the time ranges based on the stepSize.

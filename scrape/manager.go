@@ -27,11 +27,11 @@ import (
 	config_util "github.com/prometheus/common/config"
 	"github.com/prometheus/common/model"
 
-	"github.com/prometheus/prometheus/config"
-	"github.com/prometheus/prometheus/discovery/targetgroup"
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/util/osutil"
+	"github.com/jmcarp/prometheus-config/config"
+	"github.com/jmcarp/prometheus-config/discovery/targetgroup"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/util/osutil"
 )
 
 var targetMetadataCache = newMetadataMetricsCollector()

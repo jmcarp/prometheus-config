@@ -29,17 +29,17 @@ import (
 	"github.com/prometheus/common/model"
 	"go.uber.org/atomic"
 
-	"github.com/prometheus/prometheus/model/exemplar"
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/model/timestamp"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/storage/remote"
-	"github.com/prometheus/prometheus/tsdb"
-	"github.com/prometheus/prometheus/tsdb/chunks"
-	tsdb_errors "github.com/prometheus/prometheus/tsdb/errors"
-	"github.com/prometheus/prometheus/tsdb/record"
-	"github.com/prometheus/prometheus/tsdb/tsdbutil"
-	"github.com/prometheus/prometheus/tsdb/wal"
+	"github.com/jmcarp/prometheus-config/model/exemplar"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/model/timestamp"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/storage/remote"
+	"github.com/jmcarp/prometheus-config/tsdb"
+	"github.com/jmcarp/prometheus-config/tsdb/chunks"
+	tsdb_errors "github.com/jmcarp/prometheus-config/tsdb/errors"
+	"github.com/jmcarp/prometheus-config/tsdb/record"
+	"github.com/jmcarp/prometheus-config/tsdb/tsdbutil"
+	"github.com/jmcarp/prometheus-config/tsdb/wal"
 )
 
 var ErrUnsupported = errors.New("unsupported operation with WAL-only storage")

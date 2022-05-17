@@ -34,7 +34,7 @@ import (
 	"go.opentelemetry.io/otel/trace"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/prometheus/prometheus/config"
+	"github.com/jmcarp/prometheus-config/config"
 )
 
 const serviceName = "prometheus"

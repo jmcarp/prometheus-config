@@ -21,12 +21,12 @@ import (
 	"github.com/go-kit/log/level"
 	"github.com/pkg/errors"
 
-	"github.com/prometheus/prometheus/model/exemplar"
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/storage"
-	"github.com/prometheus/prometheus/tsdb/chunkenc"
-	"github.com/prometheus/prometheus/tsdb/chunks"
-	"github.com/prometheus/prometheus/tsdb/record"
+	"github.com/jmcarp/prometheus-config/model/exemplar"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/storage"
+	"github.com/jmcarp/prometheus-config/tsdb/chunkenc"
+	"github.com/jmcarp/prometheus-config/tsdb/chunks"
+	"github.com/jmcarp/prometheus-config/tsdb/record"
 )
 
 // initAppender is a helper to initialize the time bounds of the head
