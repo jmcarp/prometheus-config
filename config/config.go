@@ -31,9 +31,9 @@ import (
 	"github.com/prometheus/common/sigv4"
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/prometheus/prometheus/discovery"
-	"github.com/prometheus/prometheus/model/labels"
-	"github.com/prometheus/prometheus/model/relabel"
+	"github.com/jmcarp/prometheus-config/discovery"
+	"github.com/jmcarp/prometheus-config/model/labels"
+	"github.com/jmcarp/prometheus-config/model/relabel"
 )
 
 var (
